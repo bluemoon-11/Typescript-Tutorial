@@ -53,3 +53,29 @@ newValue = 2.5
 if(typeof newValue === "string"){
     newValue.toUpperCase();
 }
+
+
+//example-2
+const data : unknown = "chai aur Code"
+// maan lo ki ye string hai
+const strData : string  = data as string
+
+//example
+type Role ="superAdmin" | "admin" | "user"
+
+function redirectBasedOnRole(role:Role) : void{ // void means i dont care about the return type
+    if(role === "admin"){
+        console.log("Redirecting to admin dashboard");
+        return
+    }
+    if(role === "user"){
+        console.log("Redirecting to user dashboard");
+        return;
+    }
+    role; // type never --> after adding superadmin it will be suuperadmin
+}
+
+//example
+function neverReturn():never{ // never returns anything
+    while(true){}
+}
